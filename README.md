@@ -1,16 +1,16 @@
-= requirejs-promise =
+# requirejs-promise
 
 This is a plugin for Require.JS that allows modules to resolve asynchronously via jQuery Promises. The current AMD standard does not specify how to deal with asynchronous dependencies, and as such it is perfectly reasonable that Require.JS does not handle them. That said, I still find them unavoidable from time to time, so here we are.
 
-== Status ==
+## Status
 
 IMPORTANT: THIS IS JUST A STUB! NO ACTUAL CODE YET! NOTHING TO SEE HERE!
 
-== Licence ==
+## Licence
 
 I'm putting this out under the Simplified BSD Licence (see LICENCE). Go nuts.
 
-== Requirements ==
+## Requirements
 
 I'm starting off with jQuery Promises / Deferred objects, so you'll need to have jQuery (1.7.x or higher). I intend to keep up with jQuery releases and won't be trying to maintain support for older versions (although I won't be actively trying to cut it either), so I may need your help to maintain compatibility (if it's important to you).
 
@@ -20,7 +20,7 @@ As this is just a plugin, it doesn't make sense to have further requirements.
 
 I do intend to eventually extend support to other implementations of Promises (with your help) so jQuery won't always be needed.
 
-== Usage ==
+## Usage
 
 You shouldn't need to include this directly in your HTML as a script element.
 
