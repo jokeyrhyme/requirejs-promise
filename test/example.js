@@ -1,6 +1,17 @@
+/*jslint browser:true, white:true*/
+/*global define:true, require:true*/
+
 define('example', ['jquery'], function($) {
-    // TODO: make an actual asynchronous example once plugin is ready
-    return {
-        message: 'example is loaded'
-    };
+  'use strict';
+  var dfrd = new $.Deferred(),
+  payload = {
+    isOkay: true,
+    message: 'example is loaded'
+  };
+
+  setTimeout(function() {
+    dfrd.resolve(payload);
+  }, 0);
+
+  return dfrd.promise();
 });
