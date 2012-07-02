@@ -2,7 +2,7 @@
 /*jslint browser:true, white:true*/
 /*global define:true, require:true*/
 
-define([], function() {
+define(['require'], function(require) {
   'use strict';
 
   /**
@@ -54,17 +54,18 @@ define([], function() {
     load: function(name, req, load, config) {
       // TODO: check config.isBuild\
       // TODO: call load.fromText() if necessary to eval JavaScript text
-      var result = req(name);
-      if (isPromise(result)) {
-        result.fail(function() {
-          load.error.apply(this, arguments);
-        });
-        result.then(function() {
-          load.apply(this, arguments);
-        });
-      } else {
-        load(result);
-      }
+      req([name], function(result) {
+        if (isPromise(result)) {
+          result.fail(function() {
+            load.error.apply(this, arguments);
+          });
+          result.then(function() {
+            load.apply(this, arguments);
+          });
+        } else {
+          load(result);
+        }
+      });
     }/*,
     write: function() {
       // TODO: what needs to be done for write() ??

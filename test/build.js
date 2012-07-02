@@ -6,32 +6,29 @@
 
 ({
   mainConfigFile: 'main.js',
-  appDir: './',
-  dir: 'build/',
-  keepBuildDir: true,
+//  appDir: './',
+//  dir: 'build/',
+//  keepBuildDir: true,
   paths: {
     'jquery': 'empty:'
   },
-  optimize: 'none', //'uglify',
+  optimize: 'uglify',
   uglify: {
     ascii_only: true,
     max_line_length: 80
   },
   optimizeCss: 'none',
-  modules: [
+/*  modules: [
     {
-      name: 'main',
+      name: 'build/main',
       include: [
         'promise'
-      ],
-      exclude: [
-        'jquery'
       ]
     }
-  ],
-  stubModules: [
+  ], */
+/*  stubModules: [
     'promise'
-  ]
-//  name: 'main'
-//  out: './build/main.min.js'
+  ], */
+  name: 'main',
+  out: 'main.min.js'
 })
