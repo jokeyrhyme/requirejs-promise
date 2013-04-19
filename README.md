@@ -28,6 +28,7 @@ You shouldn't need to include this directly in your HTML as a script element.
 
 Configure Require.JS so that it has a path to resolve, for example:
 
+```javascript
     require.config({
         config: {
             paths: {
@@ -36,16 +37,18 @@ Configure Require.JS so that it has a path to resolve, for example:
             }
         }
     });
+```
 
 Your asynchronous module will probably look something like this:
 
+```javascript
     define('myAsyncModule', ['jquery'], function($) {
         var deferred = new $.Deferred(),
         myModule = {};
 
         // we'll use AJAX here, but you could do anything asynchronous
         $.ajax({
-            url: '//domain/path/to/script'
+            url: '//domain/path/to/script',
             complete: function(jqxhr, textstatus) {
                 if ($.inArray(jqxhr.status, [0, 200, 204, 304])) {
                     // TODO: do other stuff for successful AJAX
@@ -61,13 +64,16 @@ Your asynchronous module will probably look something like this:
 
         return deferred.promise();
     });
+```
 
 Then, when it comes time to actually load in an asynchronous Promise-based dependency, do something like this:
 
+```javascript
     require(['promise!myAsyncModule'], function(asyncModule) {
         // TODO: do something cool with asyncModule.response
         ...
     });
+```
 
 The goal of this little plugin is to make module usage completely seemless. Module resolution is asynchronous within Require.JS anyway, so (assuming everything goes according to plan) nobody downstream should notice that the dependency had a Promise.
 
