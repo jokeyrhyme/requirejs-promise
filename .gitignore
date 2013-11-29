@@ -1,3 +1,7 @@
 .DS_Store
 test/build/*
+
+# IDE files
 .project
+/.idea/workspace.xml
+/.idea/dictionaries
