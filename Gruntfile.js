@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         src: [
           '**/*.js',
           '**/*.json',
-          '!test/**/*',
+          '!**/*.min.js',
           '!node_modules/**/*',
           '!bower_components/**/*'
         ],
@@ -26,13 +26,31 @@ module.exports = function (grunt) {
           failOnError: true
         }
       }
+    },
+
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: '.',
+          mainConfigFile: 'examples/require-config.js',
+          paths: {
+            jquery: 'empty:',
+            q: 'empty:',
+            rsvp: 'empty:'
+          },
+          name: 'test/tests',
+          out: 'test/tests.min.js'
+        }
+      }
     }
+
   });
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-jslint');
 
-  grunt.registerTask('test', ['jslint']);
+  grunt.registerTask('test', ['jslint', 'requirejs']);
 
   // Default task.
   grunt.registerTask('default', ['test']);

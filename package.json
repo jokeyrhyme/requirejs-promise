@@ -30,6 +30,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4",
+    "grunt-contrib-requirejs": "~0.4",
     "grunt-jslint": "~1.1"
   },
   "peerDependencies": {},
