@@ -14,7 +14,8 @@ module.exports = function (grunt) {
           '**/*.js',
           '**/*.json',
           '!test/**/*',
-          '!node_modules/**/*'
+          '!node_modules/**/*',
+          '!bower_components/**/*'
         ],
         exclude: [],
         directives: {
