@@ -126,3 +126,33 @@ suite('RSVP Promise example', function () {
   });
 
 });
+
+suite('combination example', function () {
+  'use strict';
+
+  test('AMD: direct require', function (done) {
+    require(['examples/combination'], function (promise) {
+      assert(promise);
+      assert.isObject(promise);
+      assert.isFunction(promise.then);
+      done();
+    });
+  });
+
+  test('AMD: require with promise!', function (done) {
+    require(['promise!examples/combination'], function (result) {
+      assert(result);
+      assert.isArray(result);
+      assert.sameMembers(result, [
+        'jquery-amd',
+        'jquery-commonjs',
+        'q-amd',
+        'q-commonjs',
+        'rsvp-amd',
+        'rsvp-commonjs'
+      ]);
+      done();
+    });
+  });
+
+});
