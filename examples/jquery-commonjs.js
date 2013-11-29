@@ -9,7 +9,7 @@ define(function (require) {
   dfrd = new $.Deferred();
 
   setTimeout(function () {
-    dfrd.resolve('jquery-amd');
+    dfrd.resolve('jquery-commonjs');
   }, 0);
 
   return dfrd.promise();

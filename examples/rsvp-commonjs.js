@@ -9,7 +9,7 @@ define(function (require) {
   promise = new RSVP.Promise(function (resolve) { // , reject
 
     setTimeout(function () {
-      resolve('rsvp-amd');
+      resolve('rsvp-commonjs');
     }, 0);
 
   });

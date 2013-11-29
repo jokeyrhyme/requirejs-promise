@@ -5,50 +5,6 @@
 define(function () {
   'use strict';
 
-  var isFunction, isPromise;
-
-  /**
-   * Is this object a Function?
-   * Test code basically ripped from jQuery.
-   */
-  isFunction = function (object) {
-    if (!object) {
-      return false;
-    }
-    return Object.prototype.toString.call(object) === '[object Function]';
-  };
-
-  /**
-   * Does this object expose the basic read-only interface for a Promise?
-   */
-  isPromise = function (object) {
-    var result, properties, p, pLength;
-
-    result = true;
-    properties = [
-      'always',
-      'done',
-      'fail',
-      'pipe',
-      'progress',
-      'pipe',
-      'state',
-      'then'
-    ];
-    pLength = properties.length;
-
-    if (!object || typeof object !== 'object') {
-      return false;
-    }
-    for (p = 0; p < pLength; p += 1) {
-      if (!isFunction(object[properties[p]])) {
-        result = false;
-        break;
-      }
-    }
-    return result;
-  };
-
   return {
     /**
      * @param {String} name This is the name of the desired resource module.
@@ -60,7 +16,8 @@ define(function () {
       // TODO: check config.isBuild\
       // TODO: call load.fromText() if necessary to eval JavaScript text
       req([name], function (result) {
-        if (isPromise(result)) {
+        if (result && typeof result === 'object' &&
+            typeof result.then === 'function') {
           result.fail(function () {
             load.error.apply(this, arguments);
           });

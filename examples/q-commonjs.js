@@ -9,7 +9,7 @@ define(function (require) {
   dfrd = Q.defer();
 
   setTimeout(function () {
-    dfrd.resolve('q-amd');
+    dfrd.resolve('q-commonjs');
   }, 0);
 
   return dfrd.promise;
