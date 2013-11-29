@@ -1,6 +1,9 @@
 .DS_Store
 test/build/*
 
+# temporary dependencies
+node_modules
+
 # IDE files
 .project
 /.idea/workspace.xml

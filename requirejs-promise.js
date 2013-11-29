@@ -1,25 +1,30 @@
 /*! see LICENCE for Simplified BSD Licence */
-/*jslint browser:true, white:true*/
-/*global define:true, require:true*/
+/*jslint browser:true, indent:2*/
+/*global define, require*/ // Require.JS
 
-define(['require'], function(require) {
+define(function () {
   'use strict';
+
+  var isFunction, isPromise;
 
   /**
    * Is this object a Function?
    * Test code basically ripped from jQuery.
    */
-  var isFunction = function(object) {
+  isFunction = function (object) {
     if (!object) {
       return false;
     }
     return Object.prototype.toString.call(object) === '[object Function]';
-  },
+  };
+
   /**
    * Does this object expose the basic read-only interface for a Promise?
    */
-  isPromise = function(object) {
-    var result = true,
+  isPromise = function (object) {
+    var result, properties, p, pLength;
+
+    result = true;
     properties = [
       'always',
       'done',
@@ -29,13 +34,13 @@ define(['require'], function(require) {
       'pipe',
       'state',
       'then'
-    ],
-    p, pLength = properties.length;
+    ];
+    pLength = properties.length;
 
     if (!object || typeof object !== 'object') {
       return false;
     }
-    for (p = 0; p < pLength; p++) {
+    for (p = 0; p < pLength; p += 1) {
       if (!isFunction(object[properties[p]])) {
         result = false;
         break;
@@ -51,15 +56,15 @@ define(['require'], function(require) {
      * @param {Function} load Pass the module's result to this function.
      * @param {Object} config Provides the optimizer's configuration.
      */
-    load: function(name, req, load, config) {
+    load: function (name, req, load) { // , config
       // TODO: check config.isBuild\
       // TODO: call load.fromText() if necessary to eval JavaScript text
-      req([name], function(result) {
+      req([name], function (result) {
         if (isPromise(result)) {
-          result.fail(function() {
+          result.fail(function () {
             load.error.apply(this, arguments);
           });
-          result.then(function() {
+          result.then(function () {
             load.apply(this, arguments);
           });
         } else {
@@ -67,10 +72,10 @@ define(['require'], function(require) {
         }
       });
     }/*,
-    write: function() {
+    write: function () {
       // TODO: what needs to be done for write() ??
     }, */
-/*        pluginBuilder: function() {
+/*        pluginBuilder: function () {
       // TODO: what needs to be done for pluginBuilder() ??
     } */
     /*
