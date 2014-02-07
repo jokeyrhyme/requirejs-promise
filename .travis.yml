@@ -1,13 +1,19 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
 
 before_script:
-  - npm install -g grunt-cli
-  - npm install -g bower
-  - bower install
+- git submodule update --init --recursive
+- npm install -g grunt-cli
+- npm install -g bower
+- bower install
 
-script: 'grunt travis'
+script: grunt travis
 
 notifications:
   email: false
+
+env:
+  global:
+  - secure: iLTefnFaLgpDZe0HIiukcjXWsYvA1HnofmWw1q4B+Lq4Savlpk8mODt0Wnd85njPiF7CrjDcoxUUQwVtFwDX/9FgkFLkfU5izXtwanO4bWWg9KMqqyUYKpV86KYNEOn5nE3bBNh/dMX3UB/R2AoqF4F8O9wDVBb9AaPCUYIflgc=
+  - secure: Z3lWrFbTvdVt6nz64TZPVpbvkqlFF283wOQ6jd+hwOUB9e9a9YNULwkRTWRNBl8ztMuUtLrvD0pIdpU5wprDBgeigvNesa+qDcKxNq9xIwidNFg0MaqOrLs98GzEJ1hBkR2LFFovnuJrtEokwGH7Q11/BjFxLpVhxsUbChBnyTI=

@@ -20,7 +20,10 @@
 
     <script src="tests.min.js"></script>
     <script>
-        mocha.run();
+        var runner = mocha.run();
+        runner.on('end', function(){
+          window.mochaResults = runner.stats;
+        });
     </script>
 </body>
 </html>
