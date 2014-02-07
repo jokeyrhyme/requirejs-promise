@@ -1,5 +1,7 @@
 # requirejs-promise
 
+[![Build Status](https://travis-ci.org/jokeyrhyme/requirejs-promise.png?branch=master)](https://travis-ci.org/jokeyrhyme/requirejs-promise)
+
 This is a plugin for Require.JS that allows modules to resolve asynchronously via jQuery Promises. The current AMD standard does not specify how to deal with asynchronous dependencies, and as such it is perfectly reasonable that Require.JS does not handle them. That said, I still find them unavoidable from time to time, so here we are.
 
 ## Status
