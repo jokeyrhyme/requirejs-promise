@@ -21,7 +21,7 @@ define(function () {
           result.fail(function () {
             load.error.apply(this, arguments);
           });
-          result.then(function () {
+          result.done(function () {
             load.apply(this, arguments);
           });
         } else {
