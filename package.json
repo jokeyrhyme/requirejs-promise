@@ -1,7 +1,7 @@
 {
   "name": "requirejs-promise",
   "description": "plugin for Require.JS that allows modules to resolve asynchronously via Promises",
-  "version": "0.2.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/jokeyrhyme/requirejs-promise",
   "author": {
     "name": "Ron Waldon",
