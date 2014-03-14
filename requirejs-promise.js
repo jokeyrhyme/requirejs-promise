@@ -21,7 +21,10 @@ define(function () {
           result.fail(function () {
             load.error.apply(this, arguments);
           });
-          result.then(function () {
+          // If the promise supports "done" (not all do), we want to use that to
+          // terminate the promise chain and expose any exceptions.
+          var complete = result.done || result.then;
+          complete.call(result, function () {
             load.apply(this, arguments);
           });
         } else {
