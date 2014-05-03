@@ -4,6 +4,8 @@
 /*global suite, test, setup, teardown, suiteSetup, suiteTeardown*/ // mocha
 /*global assert*/ // chai
 
+/*global Promise*/ // ES6 native Promise
+
 suite('jQuery Promise example', function () {
   'use strict';
 
@@ -126,6 +128,33 @@ suite('RSVP Promise example', function () {
   });
 
 });
+
+if (this.Promise) {
+
+  suite('ES6 Promise example', function () {
+    'use strict';
+
+    test('AMD / CommonJS: direct require', function (done) {
+      require(['examples/es6'], function (promise) {
+        assert(promise);
+        assert.isObject(promise);
+        assert.isFunction(promise.then);
+        done();
+      });
+    });
+
+    test('AMD / CommonJS: require with promise!', function (done) {
+      require(['promise!examples/es6'], function (result) {
+        assert(result);
+        assert.isString(result);
+        assert.equal(result, 'es6');
+        done();
+      });
+    });
+
+  });
+
+}
 
 suite('combination example', function () {
   'use strict';

@@ -30,7 +30,7 @@
     "mocha": "~1.18",
     "q": "~1.0",
     "requirejs": "~2.1",
-    "rsvp": "~2.0"
+    "rsvp": "~3.0"
   },
   "peerDependencies": {},
   "keywords": ["requirejs", "deferred", "promise"]
