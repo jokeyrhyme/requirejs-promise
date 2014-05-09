@@ -27,8 +27,6 @@ define(function () {
      * @param {Object} config Provides the optimizer's configuration.
      */
     load: function (name, req, load) { // , config
-      // TODO: check config.isBuild\
-      // TODO: call load.fromText() if necessary to eval JavaScript text
       req([name], function (result) {
         var onReject, onResolve, complete;
         onReject = function () {
@@ -54,13 +52,7 @@ define(function () {
           load(result);
         }
       });
-    }/*,
-    write: function () {
-      // TODO: what needs to be done for write() ??
-    }, */
-/*        pluginBuilder: function () {
-      // TODO: what needs to be done for pluginBuilder() ??
-    } */
+    }
     /*
      * Note: we explicitly do NOT implement normalize(), as the simpler
      * default implementation is sufficient for current use cases.

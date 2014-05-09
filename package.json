@@ -35,7 +35,10 @@
     "grunt-contrib-watch": "~0.6",
     "grunt-jslint": "~1.1",
     "grunt-mocha": "~0.4",
-    "grunt-saucelabs": "~5.1"
+    "grunt-saucelabs": "~5.1",
+    "gulp": "^3.6.2",
+    "gulp-util": "^2.2.14",
+    "through2": "^0.4.1"
   },
   "peerDependencies": {},
   "keywords": [

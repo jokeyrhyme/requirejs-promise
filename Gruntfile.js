@@ -28,9 +28,6 @@ module.exports = function (grunt) {
           '!bower_components/**/*'
         ],
         exclude: [],
-        directives: {
-          todo: true // TODO: eventually eliminate this exemption
-        },
         options: {
           errorsOnly: true,
           failOnError: true
