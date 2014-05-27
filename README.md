@@ -14,11 +14,8 @@ I'm putting this out under the Simplified BSD Licence (see LICENCE). Go nuts.
 
 ## Requirements
 
-You'll also (obviously) need Require.JS. Likewise, I'll always be targeting the current version.
+You'll need Require.JS. I aim to always target the current version of Require.JS.
 
-As this is just a plugin, it doesn't make sense to have further requirements.
-
-I do intend to eventually extend support to other implementations of Promises (with your help) so jQuery won't always be needed.
 
 ## Usage
 
