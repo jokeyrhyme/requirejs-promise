@@ -156,11 +156,11 @@ if (this.Promise) {
 
 }
 
-suite('combination example', function () {
+suite('CommonJS combination example', function () {
   'use strict';
 
-  test('AMD: direct require', function (done) {
-    require(['examples/combination'], function (promise) {
+  test('direct require', function (done) {
+    require(['examples/combination-commonjs'], function (promise) {
       assert(promise);
       assert.isObject(promise);
       assert.isFunction(promise.then);
@@ -168,8 +168,8 @@ suite('combination example', function () {
     });
   });
 
-  test('AMD: require with promise!', function (done) {
-    require(['promise!examples/combination'], function (result) {
+  test('require with promise!', function (done) {
+    require(['promise!examples/combination-commonjs'], function (result) {
       assert(result);
       assert.isArray(result);
       assert.sameMembers(result, [
@@ -185,3 +185,34 @@ suite('combination example', function () {
   });
 
 });
+
+suite('AMD combination example', function () {
+  'use strict';
+
+  test('direct require', function (done) {
+    require(['examples/combination-amd'], function (promise) {
+      assert(promise);
+      assert.isObject(promise);
+      assert.isFunction(promise.then);
+      done();
+    });
+  });
+
+  test('require with promise!', function (done) {
+    require(['promise!examples/combination-amd'], function (result) {
+      assert(result);
+      assert.isArray(result);
+      assert.sameMembers(result, [
+        'jquery-amd',
+        'jquery-commonjs',
+        'q-amd',
+        'q-commonjs',
+        'rsvp-amd',
+        'rsvp-commonjs'
+      ]);
+      done();
+    });
+  });
+
+});
+
