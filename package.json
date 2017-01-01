@@ -32,13 +32,19 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "chai": "^3.5.0",
     "grunt": "~1.0.1",
     "grunt-contrib-connect": "~1.0.2",
     "grunt-contrib-requirejs": "~1.0.0",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-jslint": "~1.1",
     "grunt-mocha": "~1.0.2",
-    "grunt-saucelabs": "~9.0.0"
+    "grunt-saucelabs": "~9.0.0",
+    "jquery": "^3.1.1",
+    "mocha": "^3.2.0",
+    "q": "^1.4.1",
+    "requirejs": "^2.3.2",
+    "rsvp": "^3.3.3"
   },
   "peerDependencies": {},
   "keywords": [
