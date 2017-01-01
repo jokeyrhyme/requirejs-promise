@@ -18,7 +18,7 @@
   },
   "licenses": [
     {
-      "type": "BSD",
+      "type": "BSD-2-Clause",
       "url": "https://github.com/jokeyrhyme/requirejs-promise/blob/master/LICENSE"
     }
   ],
