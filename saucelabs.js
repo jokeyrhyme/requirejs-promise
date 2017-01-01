@@ -24,12 +24,12 @@ module.exports = {
     },
     {
       browserName: "firefox",
-      version: "26",
+      version: "40",
       platform: "Windows 7"
     },
     {
       browserName: "googlechrome",
-      version: "31",
+      version: "50",
       platform: "OS X 10.9"
     },
     {
