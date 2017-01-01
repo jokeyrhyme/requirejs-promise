@@ -23,7 +23,10 @@
     }
   ],
   "main": "requirejs-promise.js",
-  "scripts": {},
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt test"
+  },
   "engines": {
     "node": ">=0.9.0 <0.11.0"
   },
