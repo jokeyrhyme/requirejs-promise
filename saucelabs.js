@@ -8,9 +8,9 @@ module.exports = {
     'http://127.0.0.1:9999/test/unminified.html',
     'http://127.0.0.1:9999/test/minified.html'
   ],
-  tunnelTimeout: 5,
+  tunnelTimeout: 10,
   build: process.env.TRAVIS_JOB_ID,
-  concurrency: 3,
+  concurrency: 1,
   browsers: [
     {
       browserName: "internet explorer",
