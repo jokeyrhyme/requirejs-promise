@@ -137,7 +137,7 @@ if (this.Promise) {
     test('AMD / CommonJS: direct require', function (done) {
       require(['examples/es6'], function (promise) {
         assert(promise);
-        assert.isObject(promise);
+        assert.equal(typeof promise, 'object');
         assert.isFunction(promise.then);
         done();
       });
@@ -215,4 +215,3 @@ suite('AMD combination example', function () {
   });
 
 });
-

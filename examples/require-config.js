@@ -4,9 +4,9 @@
 require.config({
   baseUrl: '..',
   paths: {
-    jquery: 'bower_components/jquery/dist/jquery',
-    q: 'bower_components/q/q',
-    rsvp: 'bower_components/rsvp/rsvp.amd',
+    jquery: 'node_modules/jquery/dist/jquery',
+    q: 'node_modules/q/q',
+    rsvp: 'node_modules/rsvp/dist/rsvp',
 
     promise: 'requirejs-promise'
   }
