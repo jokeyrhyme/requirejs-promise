@@ -24,14 +24,7 @@
   ],
   "main": "requirejs-promise.js",
   "dependencies": {},
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "jquery": "^3.1.1",
-    "mocha": "^3.2.0",
-    "q": "^1.4.1",
-    "requirejs": "^2.3.2",
-    "rsvp": "^3.3.3"
-  },
+  "devDependencies": {},
   "peerDependencies": {},
   "keywords": ["requirejs", "deferred", "promise"]
 }
